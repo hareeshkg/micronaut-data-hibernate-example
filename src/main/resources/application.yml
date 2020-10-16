@@ -1,0 +1,23 @@
+micronaut:
+  application:
+    name: airportService
+
+jackson:
+  bean-introspection-module: true
+
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/airport-db
+    driverClassName: org.postgresql.Driver
+    username: docker
+    password: docker
+
+jpa:
+  default:
+    packages-to-scan:
+      - 'com.hkg.micronaut.airport' 
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        show_sql: true
